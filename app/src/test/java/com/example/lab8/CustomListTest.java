@@ -47,5 +47,17 @@ public class CustomListTest {
         assertEquals(false, cityList.hasCity(city1));
     }
 
+    @Test
+        //Check if a city is present in the list. If it does then remove it from the list, if not then throw an exception
+    void testDeleteCity() {
+        CustomList cityList = MockCityList();
+        City city = new City("Calgary", "Alberta");
+
+        cityList.addCity(city);
+        assertEquals(true, cityList.hasCity(city));
+        cityList.delete(city);
+        assertEquals(false, cityList.hasCity(city));
+        //assertThrows(IllegalArgumentException.class, ()-> {cityList.delete(city);} );
+    }
 
 }
