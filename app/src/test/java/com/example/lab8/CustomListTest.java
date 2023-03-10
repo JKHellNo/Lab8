@@ -35,6 +35,17 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
     }
 
+    @Test
+        // given a city, return whether or not it belongs in the list
+    void testHasCity() {
+        CustomList cityList = MockCityList();
+        City city = new City("Shenzhen", "Guangdong");
+        City city1 = new City("Calgary", "Alberta");
+        cityList.addCity(city);
+
+        assertEquals(true, cityList.hasCity(city));
+        assertEquals(false, cityList.hasCity(city1));
+    }
 
 
 }
